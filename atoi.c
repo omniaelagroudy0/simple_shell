@@ -40,20 +40,20 @@ int _isalpha(int c)
 }
 
 /**
- *atoi - converts a string to an integer
+ *_atoi - converts a string to an integer
  *@s: the string to be converted
  *Return: 0 if no numbers in string, converted number otherwise
  */
 
-int atoi(char *s)
+int _atoi(char *s)
 {
-	int i, si_gn = 1, flag = 0, output;
-	unsi_gned int result = 0;
+	int i, sign = 1, flag = 0, output;
+	unsigned int result = 0;
 
 	for (i = 0;  s[i] != '\0' && flag != 2; i++)
 	{
 		if (s[i] == '-')
-			si_gn *= -1;
+			sign *= -1;
 
 		if (s[i] >= '0' && s[i] <= '9')
 		{
@@ -65,7 +65,7 @@ int atoi(char *s)
 			flag = 2;
 	}
 
-	if (si_gn == -1)
+	if (sign == -1)
 		output = -result;
 	else
 		output = result;
